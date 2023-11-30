@@ -32,6 +32,16 @@ function App() {
         >
             <div className="w-full">
                 <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+                <div style={{
+                        fontSize: "20px",
+                        textAlign: 'center',
+                        fontWeight:'bold'
+                    }} >Currency Converter</div>
+                    <div style={{
+                        fontSize: "15px",
+                        textAlign: 'right',
+                        fontWeight:'bold'
+                    }}> ~ by Dhanraj Mohite</div>
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
@@ -43,7 +53,7 @@ function App() {
                                 label="From"
                                 amount={amount}
                                 currencyOptions={options}
-                                onCurrencyChange={(currency) => setAmount(amount)}
+                                onCurrencyChange={(currency) => setFrom(currency)}
                                 selectCurrency={from}
                                 onAmountChange={(amount) => { setAmount(amount) }}
                             />
@@ -69,7 +79,7 @@ function App() {
                             />
                         </div>
                         <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
-                            Convert {from.toUpperCase} to {to.toLowerCase}
+                            Convert from {from.toUpperCase()} to {to.toUpperCase()}
                         </button>
                     </form>
                 </div>
